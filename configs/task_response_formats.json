@@ -1,0 +1,378 @@
+{
+  "2d_oriented_bbox_qa_detect_category": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          285.6775,
+          329.4948,
+          101.3739,
+          31.7539,
+          1.5869
+        ],
+        "label": "boxed_beverage"
+      }
+    ],
+    "description": "Return an array containing one object with 'oriented_bbox_2d' (u, v, width, height, angle) and an optional 'label' and 'description'."
+  },
+  "2d_oriented_bbox_qa_single_part_with_desc": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          518.3,
+          326.1,
+          68.3052,
+          29.7254,
+          0.3218
+        ],
+        "label": "bucket_noodle--Lid"
+      }
+    ],
+    "description": "Return an array containing one object representing a single detected part with 'oriented_bbox_2d' (u, v, width, height, angle), an optional 'label', and optional 'description' for human-readable details."
+  },
+  "2d_oriented_bbox_qa_single_with_desc": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          285.6775,
+          329.4948,
+          101.3739,
+          31.7539,
+          1.5869
+        ],
+        "label": "boxed_beverage"
+      }
+    ],
+    "description": "Return an array containing one object with 'oriented_bbox_2d' (cx, cy, width, height, angle), an optional 'label', and optional 'description' for human-readable details."
+  },
+  "3d_bbox_qa_single_part_with_desc": {
+    "value_example": [
+      {
+        "bbox_uvd": [
+          643.6406,
+          539.9167,
+          1.1169,
+          0.0914,
+          0.0356,
+          0.0678,
+          -1.9647,
+          -0.0624,
+          -0.1489
+        ],
+        "label": "bottle--lid"
+      }
+    ],
+    "description": "Return an array containing one object representing a single detected 3D part with 'bbox_uvd' (center(u,v,depth) + size and optional rotation fields), an optional 'label', and optional 'description' for human-readable details."
+  },
+  "obj_bbox_qa_detect_category_3d": {
+    "value_example": [
+      {
+        "bbox_uvd": [
+          693.625,
+          486.0694,
+          0.9356,
+          0.0938,
+          0.1981,
+          0.0952,
+          -2.6105,
+          0.9397,
+          0.3861
+        ],
+        "label": "vase"
+      }
+    ],
+    "description": " Return an array containing one object with 'bbox_uvd' (center + size and optional rotation fields; at least first 6 values: [cx,cy,cz,sx,sy,sz]) and an optional 'label' and 'description'."
+  },
+  "obj_bbox_qa_single_with_desc_3d": {
+    "value_example": [
+      {
+        "bbox_uvd": [
+          693.625,
+          486.0694,
+          0.9356,
+          0.0938,
+          0.1981,
+          0.0952,
+          -2.6105,
+          0.9397,
+          0.3861
+        ],
+        "label": "vase"
+      }
+    ],
+    "description": "Please output each 3D bounding box in the following JSON format exactly (an array of objects):\n[{\"bbox_uvd\":[u, v, depth, x_size, y_size, z_size, roll, pitch, yaw], \"label\":\"category\"}]\n\nNotes:\n(1) u,v,depth: center of the object in the camera coordinate system, u and v is point in the image, depth is the point's depth in meters.\n(2) x_size, y_size, z_size: object dimensions along the X, Y, Z axes respectively (meters) when rotation angles are zero.\n(3) roll, pitch, yaw: Euler angles (radians) representing rotations around X, Y, Z axes respectively.\nDetect all objects in this image and return the results as the JSON array above."
+  },
+  "correspondence_pairs_customized_2d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored,_green_and_orange_plant",
+        "point_2d": [
+          657,
+          489
+        ],
+        "visible": false
+      },
+      {
+        "label": "b",
+        "description": "toy_plant_leaf_green",
+        "point_2d": [
+          700,
+          450
+        ],
+        "visible": true
+      }
+    ],
+    "description": "Return an array of correspondence pair objects each with 'label', 'description', 'point_2d' as [x,y], and boolean 'visible'."
+  },
+  "correspondence_pairs_customized_3d": {
+    "value_example": [
+      {
+        "label": "a", 
+        "description": "dish_multi-colored green and gray_surface", 
+        "point_uvd": [
+          522.29, 
+          534.46, 
+          0.98
+        ], 
+        "visible": true
+      },
+      {
+        "label": "b",
+        "description": "mango__pedicel",
+        "point_uvd": [
+          675.16, 
+          896.98, 
+          0.75
+        ], 
+        "visible": true
+      }
+    ],
+    "description": "Return an array of correspondence pair objects each with 'label', 'description', 'point_uvd' as [u, v, depth] (depth in meters), and boolean 'visible'."
+  },
+  "correspondence_pairs_single_object_2d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored,_green_and_orange_plant",
+        "point_2d": [
+          657,
+          489
+        ],
+        "visible": false
+      }
+    ],
+    "description": "Return an array containing one correspondence pair object for a single 2D object with fields 'label','description','point_2d', and 'visible'."
+  },
+  "correspondence_pairs_single_object_3d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored_green_and_orange_plant",
+        "point_uvd": [
+          675.16, 
+          896.98, 
+          0.75
+        ], 
+        "visible": true
+      }
+    ],
+    "description": "Return an array containing one correspondence pair object for a single 3D object with fields 'label','description','point_uvd' as [u, v, depth] (depth in meters), and 'visible'."
+  },
+  "grasp_point_2d": {
+    "value_example": [
+      {
+        "grasp_point_2d": [
+          491,
+          486
+        ],
+        "label": "toy_plant_grasp_point_2d"
+      }
+    ],
+    "description": "Return an array containing one or more objects each with 'grasp_point_2d' as [x,y] in image pixels and an optional 'label'."
+  },
+  "grasp_point_3d": {
+    "value_example": [
+      {
+        "grasp_point_uvd": [
+          583.497, 
+          628.2146, 
+          1.1836
+        ], 
+        "label": "banana_grasp_point_3d"
+      }
+    ],
+    "description": "Return an array containing one or more objects each with 'grasp_point_uvd' as [u,v,depth], depth in meters and an optional 'label'."
+  },
+  "object_point_qa_detect_category_2d": {
+    "value_example": [
+      {
+        "center_2d": [
+          632.4811,
+          415.0604
+        ],
+        "label": "orange"
+      }
+    ],
+    "description": "Return an array containing one object representing the detected instances of the requested category (e.g., all 'orange' instances collapsed to a single representative)."
+  },
+  "object_point_qa_detect_category_3d": {
+    "value_example": [
+      {
+        "center_uvd": [
+          467.3594, 
+          894.4167, 
+          0.2368
+        ],
+        "label": "calculator"
+      }
+    ],
+    "description": "Return an array containing one object representing the detected instances of the requested 3D category (single representative center_3d)."
+  },
+  "object_point_qa_single_with_desc_2d": {
+    "value_example": [
+      {
+        "center_2d": [
+          944.1924,
+          542.8064
+        ],
+        "label": "mug",
+        "description": "ceramic_mug_with_handle"
+      }
+    ],
+    "description": "Return an array containing one object with 'center_2d' as [x,y], an optional 'label', and an optional 'description' field for human-readable details."
+  },
+  "object_point_qa_single_with_desc_3d": {
+    "value_example": [
+      {
+        "center_uvd": [
+          467.3594, 
+          894.4167, 
+          0.2368
+        ],
+        "label": "calculator"
+      }
+    ],
+    "description": "Return an array containing one object with 'center_3d' as [u,v,depth], depth in meters, an optional 'label', and an optional 'description' field for human-readable details."
+  },
+  "single_func_point_2d": {
+    "value_example": [
+      {
+        "functional_point_2d": [
+          120, 
+          340
+        ],
+        "label": "vase"
+      }
+    ],
+    "description": "Return a JSON array of objects each containing 'functional_point_2d' as a point [x,y], a 'label' and optional 'confidence'."
+  },
+  "single_func_point_3d": {
+    "value_example": [
+      {
+        "functional_point_uv_depth": [
+          467.3594,
+          894.4167, 
+          0.2368
+        ],
+        "label": "cup_place_passive"
+      }
+    ],
+    "description": "Return a JSON array of objects each containing 'functional_point_uv_depth' as a 3D-point [u,v,depth], depth in meters, a 'label' and optional 'confidence'."
+  },
+  "single_func_vector_2d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          0.1259, 0.992
+        ],
+        "label": "flower_pot_place_active"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_vector' as a 2D-vector [vx,vy] and an optional 'label'."
+  },
+  "single_func_vector_3d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          -0.126, 
+          0.8704, 
+          0.476
+        ],
+        "label": "pear_cut_passive"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_vector' as a 3D vector [vx,vy,vz] and an optional 'label'."
+  },
+  "single_part_point_2d": {
+    "value_example": [
+      {
+        "functional_point_2d": [
+          812.0,
+          470.0
+        ],
+        "label": "shampoo_body"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_point_2d' as [x,y] representing a single detected part point, along with an optional 'label' and optional 'description'."
+  },
+  "single_part_point_3d": {
+    "value_example": [
+      {
+        "functional_point_uvd": [
+          514.06,
+          797.22,
+          0.78
+        ],
+        "label": "dish_rim"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_point_3d' as [x,y,z] representing a single detected 3D part point, along with an optional 'label' and optional 'description'."
+  },
+  "spatial_rel_qa_obj2cam_distance": {
+    "value_example": [
+      {
+        "distance_meters": 0.893, 
+        "label": "obj_to_camera"
+      }
+    ],
+    "description": "Return an array with at least one object containing numeric 'distance_meters' (meters)."
+  },
+  "spatial_rel_qa_obj2obj_choice": {
+    "value_example": [
+      {
+        "spatial_relation_choice": "A", 
+        "label": "choice_label"
+      }
+    ],
+    "description": "Return an array with one object with 'spatial_relation_choice' set to the chosen option (single uppercase letter) and optional 'label'."
+  },
+  "spatial_rel_qa_obj2obj_distance": {
+    "value_example": [
+      {
+        "distance_meters": 0.1872, 
+        "label": "obj_to_obj"
+      }
+    ],
+    "description": "Return an array with at least one object containing numeric 'distance_meters' (meters)."
+  },
+  "traj_qa_prediction_2d": {
+    "value_example": {
+      "2d_trajectory": [
+        [783.6492,600.2256],
+        [794.3301,566.9305],
+        [795.4985,524.3031]
+      ]
+    },
+    "description": "Return an object containing '2d_trajectory' whose value is a list of 2D points [[x,y], ...]."
+  },
+  "traj_qa_prediction_3d": {
+    "value_example": {
+      "uvd_trajectory": [
+        [644.3672, 621.7222, 0.7438],
+        [219.4375, 505.7222, 0.6606],
+        [219.1719, 657.5833, 0.6848]
+      ]
+    },
+    "description": "Return an object containing 'uvd_trajectory' whose value is a list of 3D points [[u,v,depth], ...], depth in meters."
+  }
+}

@@ -1,0 +1,717 @@
+{
+  "single_func_point_2d": {
+    "value_example": [
+      {"functional_point_2d": [[120, 340]], "label": "example_label", "confidence": 0.9}
+    ],
+    "description": "Return a JSON array of objects each containing 'functional_point_2d' as a list-of-points [[x,y]], a 'label' and optional 'confidence'."
+  },
+  "single_func_point_3d": {
+    "value_example": [
+      {"functional_point_3d": [[0.01, -0.21, -0.67]], "label": "example_label", "confidence": 0.9}
+    ],
+    "description": "Return a JSON array of objects each containing 'functional_point_3d' as a list-of-3D-points [[x,y,z]], a 'label' and optional 'confidence'."
+  },
+  "grasp_point_2d": {
+    "value_example": [
+      {
+        "grasp_point_2d": [
+          491,
+          486
+        ],
+        "label": "toy_plant_grasp_point_2d"
+      }
+    ],
+    "description": "Return an array containing one or more objects each with 'grasp_point_2d' as [x,y] in image pixels and an optional 'label'."
+  },
+  "grasp_point_3d": {
+    "value_example": [
+      {
+        "grasp_point_3d": [
+          0.0903,
+          0.113,
+          0.9269
+        ],
+        "label": "toy_plant_grasp_point_3d"
+      }
+    ],
+    "description": "Return an array containing one or more objects each with 'grasp_point_3d' as [x,y,z] in meters and an optional 'label'."
+  },
+  "multi_func_point_2d": {
+    "value_example": [
+      {"functional_point_2d": [[120, 340]], "label": "a", "score": 0.8},
+      {"functional_point_2d": [[100, 200]], "label": "b", "score": 0.5}
+    ],
+    "description": "Return an array of candidate objects each with 'functional_point_2d' (flat [x,y] inside a list), 'label', and optional 'score'."
+  },
+  "all_part_point_2d": {
+    "value_example": [
+      {
+        "functional_point_2d": [
+          812.0,
+          470.0
+        ],
+        "label": "shampoo_body"
+      },
+      {
+        "functional_point_2d": [
+          805.0,
+          371.0
+        ],
+        "label": "shampoo_lid"
+      }
+    ],
+    "description": "Return an array containing all detected part points; each object has 'functional_point_2d' as [x,y] and an optional 'label'."
+  },
+  "single_part_point_2d": {
+    "value_example": [
+      {
+        "functional_point_2d": [
+          812.0,
+          470.0
+        ],
+        "label": "shampoo_body"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_point_2d' as [x,y] representing a single detected part point, along with an optional 'label' and optional 'description'."
+  },
+  "object_point_qa_detect_all_2d": {
+    "value_example": [
+      {
+        "center_2d": [
+          710.0352,
+          437.9983
+        ],
+        "label": "boxed_beverage"
+      },
+      {
+        "center_2d": [
+          419.6646,
+          490.6215
+        ],
+        "label": "bucket_noodle"
+      },
+      {
+        "center_2d": [
+          944.1924,
+          542.8064
+        ],
+        "label": "mug"
+      },
+      {
+        "center_2d": [
+          632.4811,
+          415.0604
+        ],
+        "label": "orange"
+      },
+      {
+        "center_2d": [
+          689.9009,
+          683.4029
+        ],
+        "label": "pomegranate"
+      }
+    ],
+    "description": "Return an array containing all detected object centers in the image; each object has 'center_2d' as [x,y] in pixels and an optional 'label'."
+  },
+  "object_point_qa_detect_category_2d": {
+    "value_example": [
+      {
+        "center_2d": [
+          632.4811,
+          415.0604
+        ],
+        "label": "orange"
+      }
+    ],
+    "description": "Return an array containing one object representing the detected instances of the requested category (e.g., all 'orange' instances collapsed to a single representative)."
+  },
+  "object_point_qa_single_with_desc_2d": {
+    "value_example": [
+      {
+        "center_2d": [
+          944.1924,
+          542.8064
+        ],
+        "label": "mug",
+        "description": "ceramic_mug_with_handle"
+      }
+    ],
+    "description": "Return an array containing one object with 'center_2d' as [x,y], an optional 'label', and an optional 'description' field for human-readable details."
+  },
+  "object_point_qa_detect_all_3d": {
+    "value_example": [
+      {
+        "center_3d": [
+          0.1108,
+          0.2084,
+          0.6114
+        ],
+        "label": "hand_cream"
+      },
+      {
+        "center_3d": [
+          -0.034,
+          0.1066,
+          0.8664
+        ],
+        "label": "dish"
+      },
+      {
+        "center_3d": [
+          -0.2902,
+          0.0643,
+          0.6925
+        ],
+        "label": "bottle"
+      },
+      {
+        "center_3d": [
+          -0.0103,
+          0.2291,
+          0.5114
+        ],
+        "label": "bread"
+      },
+      {
+        "center_3d": [
+          -0.1121,
+          0.1728,
+          0.6377
+        ],
+        "label": "chili"
+      },
+      {
+        "center_3d": [
+          0.2115,
+          0.2105,
+          0.6388
+        ],
+        "label": "knife"
+      }
+    ],
+    "description": "Return an array containing all detected object centers in 3D; each object has 'center_3d' as [x,y,z] in meters and an optional 'label'."
+  },
+  "object_point_qa_detect_category_3d": {
+    "value_example": [
+      {
+        "center_3d": [
+          0.2115,
+          0.2105,
+          0.6388
+        ],
+        "label": "knife"
+      }
+    ],
+    "description": "Return an array containing one object representing the detected instances of the requested 3D category (single representative center_3d)."
+  },
+  "object_point_qa_single_with_desc_3d": {
+    "value_example": [
+      {
+        "center_3d": [
+          -0.2902,
+          0.0643,
+          0.6925
+        ],
+        "label": "bottle",
+        "description": "plastic_bottle_translucent"
+      }
+    ],
+    "description": "Return an array containing one object with 'center_3d' as [x,y,z], an optional 'label', and an optional 'description' field for human-readable details."
+  },
+  "all_part_point_3d": {
+    "value_example": [
+      {
+        "functional_point_3d": [
+          0.13,
+          0.11,
+          0.66
+        ],
+        "label": "shampoo_body"
+      },
+      {
+        "functional_point_3d": [
+          0.12,
+          0.02,
+          0.64
+        ],
+        "label": "shampoo_lid"
+      }
+    ],
+    "description": "Return an array containing all detected 3D part points; each object has 'functional_point_3d' as [x,y,z] and an optional 'label'."
+  },
+  "single_part_point_3d": {
+    "value_example": [
+      {
+        "functional_point_3d": [
+          0.13,
+          0.11,
+          0.66
+        ],
+        "label": "shampoo_body"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_point_3d' as [x,y,z] representing a single detected 3D part point, along with an optional 'label' and optional 'description'."
+  },
+  "multi_func_point_3d": {
+    "value_example": [
+      {"functional_point_3d": [[0.012, -0.23, -0.67]], "label": "a", "score": 0.8}
+    ],
+    "description": "Same as multi_func_point_2d but with 3D points in 'functional_point_3d'."
+  },
+  "multi_func_vector_2d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          [
+            -0.0129,
+            0.9999
+          ]
+        ],
+        "label": "toy_plant_place_active"
+      },
+      {
+        "functional_vector": [
+          [
+            -0.0129,
+            0.9999
+          ]
+        ],
+        "label": "toy_plant_pour_passive"
+      }
+    ],
+    "description": "Return an array of objects each with 'functional_vector' as a list-of-2D-vectors [[vx,vy]] and an optional 'label' describing the action/role."
+  },
+  "multi_func_vector_3d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          0.5648,
+          -0.227,
+          0.7934
+        ],
+        "label": "rubik_cube_place_active"
+      },
+      {
+        "functional_vector": [
+          0.5648,
+          -0.227,
+          0.7934
+        ],
+        "label": "rubik_cube_place_passive"
+      }
+    ],
+    "description": "Return an array of objects each with 'functional_vector' as a 3D vector [vx,vy,vz] (unit or direction vector) and an optional 'label' describing the action/role."
+  },
+  "single_func_vector_2d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          [
+            -0.0129,
+            0.9999
+          ]
+        ],
+        "label": "toy_plant_place_active"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_vector' as a list-of-2D-vectors [[vx,vy]] (use the same shape as multi_func_vector_2d) and an optional 'label'."
+  },
+  "single_func_vector_3d": {
+    "value_example": [
+      {
+        "functional_vector": [
+          0.5648,
+          -0.227,
+          0.7934
+        ],
+        "label": "rubik_cube_place_active"
+      }
+    ],
+    "description": "Return an array containing one object with 'functional_vector' as a 3D vector [vx,vy,vz] (same shape as multi_func_vector_3d) and an optional 'label'."
+  },
+  "spatial_rel_qa_obj2cam_distance": {
+    "value_example": [
+      {"distance_meters": 0.893, "label": "obj_to_camera"}
+    ],
+    "description": "Return an array with at least one object containing numeric 'distance_meters' (meters)."
+  },
+  "spatial_rel_qa_obj2obj_distance": {
+    "value_example": [
+      {"distance_meters": 0.1872, "label": "obj_to_obj"}
+    ],
+    "description": "Return an array with at least one object containing numeric 'distance_meters' (meters)."
+  },
+  "spatial_rel_obj2obj_choice": {
+    "value_example": [
+      {"spatial_relation_choice": "A", "label": "choice_label"}
+    ],
+    "description": "Return an array with one object with 'spatial_relation_choice' set to the chosen option (single uppercase letter) and optional 'label'."
+  },
+  "obj_bbox_qa_single_with_desc_3d": {
+    "value_example": [
+      {
+        "bbox_3d": [
+          -0.0861,
+          0.1966,
+          0.6113,
+          0.1379,
+          0.1067,
+          0.1387,
+          -2.83,
+          0.0709,
+          0.0933
+        ],
+        "label": "bucket_noodle"
+      }
+    ],
+    "alt-description": "Return an array containing one object with 'bbox_3d' (center + size and optional rotation fields; at least first 6 values: [cx,cy,cz,sx,sy,sz]) and an optional 'label' and 'description'.",
+    "description": "Please output each 3D bounding box in the following JSON format exactly (an array of objects):\n[{\"bbox_3d\":[x_center, y_center, z_center, x_size, y_size, z_size, roll, pitch, yaw], \"label\":\"category\"}]\n\nNotes:\n(1) x_center, y_center, z_center: center of the object in the camera coordinate system, in meters.\n(2) x_size, y_size, z_size: object dimensions along the X, Y, Z axes respectively (meters) when rotation angles are zero.\n(3) roll, pitch, yaw: Euler angles (radians) representing rotations around X, Y, Z axes respectively.\nDetect all objects in this image and return the results as the JSON array above."
+  },
+  "obj_bbox_qa_detect_category_3d": {
+    "value_example": [
+      {
+        "bbox_3d": [
+          -0.0861,
+          0.1966,
+          0.6113,
+          0.1379,
+          0.1067,
+          0.1387,
+          -2.83,
+          0.0709,
+          0.0933
+        ],
+        "label": "bucket_noodle"
+      }
+    ],
+    "description": " Return an array containing one object with 'bbox_3d' (center + size and optional rotation fields; at least first 6 values: [cx,cy,cz,sx,sy,sz]) and an optional 'label' and 'description'."
+  },
+  "obj_bbox_qa_detect_all_3d": {
+    "value_example": [
+      {
+        "bbox_3d": [
+          -0.3342,
+          0.1678,
+          0.771,
+          0.0476,
+          0.021,
+          0.0208,
+          -2.1875,
+          -1.2136,
+          -0.8698
+        ],
+        "label": "toy_boat"
+      },
+      {
+        "bbox_3d": [
+          0.0912,
+          0.1593,
+          0.7139,
+          0.1308,
+          0.1187,
+          0.1314,
+          -2.7339,
+          0.6187,
+          0.2978
+        ],
+        "label": "flower_pot"
+      },
+      {
+        "bbox_3d": [
+          -0.3984,
+          0.1438,
+          0.7108,
+          0.0272,
+          0.0955,
+          0.0272,
+          -0.3338,
+          -0.2828,
+          -2.9917
+        ],
+        "label": "facial_cream"
+      },
+      {
+        "bbox_3d": [
+          -0.2419,
+          0.2224,
+          0.5869,
+          0.0435,
+          0.0425,
+          0.0416,
+          -0.2609,
+          -0.5632,
+          -3.0435
+        ],
+        "label": "cake"
+      }
+    ],
+    "description": "Return an array containing all detected objects each with 'bbox_3d' (center + size and optional rotation fields; at least first 6 values: [cx,cy,cz,sx,sy,sz]) and an optional 'label'."
+  },
+  "2d_oriented_bbox_qa_detect_all": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          285.6775,
+          329.4948,
+          101.3739,
+          31.7539,
+          1.5869
+        ],
+        "label": "boxed_beverage"
+      },
+      {
+        "oriented_bbox_2d": [
+          517.5671,
+          365.1802,
+          111.9683,
+          65.5052,
+          1.5946
+        ],
+        "label": "bucket_noodle"
+      },
+      {
+        "oriented_bbox_2d": [
+          246.3992,
+          377.2935,
+          104.6518,
+          40.9162,
+          1.1165
+        ],
+        "label": "corn"
+      },
+      {
+        "oriented_bbox_2d": [
+          294.0,
+          456.4999,
+          88.4747,
+          59.9076,
+          0.9828
+        ],
+        "label": "soap"
+      },
+      {
+        "oriented_bbox_2d": [
+          359.5,
+          287.0,
+          36.0,
+          33.0,
+          1.5708
+        ],
+        "label": "orange"
+      }
+    ],
+    "description": "Return an array containing all detected objects each with 'oriented_bbox_2d' (cx, cy, width, height, angle) and an optional 'label'."
+  },
+  "2d_oriented_bbox_qa_detect_category": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          285.6775,
+          329.4948,
+          101.3739,
+          31.7539,
+          1.5869
+        ],
+        "label": "boxed_beverage"
+      }
+    ],
+    "description": "Return an array containing one object with 'oriented_bbox_2d' (cx, cy, width, height, angle) and an optional 'label' and 'description'."
+  },
+  "2d_oriented_bbox_qa_single_with_desc": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          285.6775,
+          329.4948,
+          101.3739,
+          31.7539,
+          1.5869
+        ],
+        "label": "boxed_beverage"
+      }
+    ],
+    "description": "Return an array containing one object with 'oriented_bbox_2d' (cx, cy, width, height, angle), an optional 'label', and optional 'description' field for human-readable details."
+  },
+  "2d_oriented_bbox_qa_detect_all_parts": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          518.3,
+          326.1,
+          68.3052,
+          29.7254,
+          0.3218
+        ],
+        "label": "bucket_noodle--Lid"
+      },
+      {
+        "oriented_bbox_2d": [
+          508.1888,
+          374.8069,
+          89.0349,
+          64.7611,
+          1.8045
+        ],
+        "label": "bucket_noodle--Body"
+      }
+    ],
+    "description": "Return an array containing all detected object parts each with 'oriented_bbox_2d' (cx, cy, width, height, angle) and an optional 'label' that may include part suffixes (e.g., 'object--Part')."
+  },
+  "2d_oriented_bbox_qa_single_part_with_desc": {
+    "value_example": [
+      {
+        "oriented_bbox_2d": [
+          518.3,
+          326.1,
+          68.3052,
+          29.7254,
+          0.3218
+        ],
+        "label": "bucket_noodle--Lid"
+      }
+    ],
+    "description": "Return an array containing one object representing a single detected part with 'oriented_bbox_2d', an optional 'label', and optional 'description' for human-readable details."
+  },
+  "3d_bbox_qa_detect_all_parts": {
+    "value_example": [
+      {
+        "bbox_3d": [
+          0.3139,
+          0.0993,
+          0.7167,
+          0.0992,
+          0.0097,
+          0.0957,
+          -0.3322,
+          0.5053,
+          3.0399
+        ],
+        "label": "bucket_noodle--Lid"
+      },
+      {
+        "bbox_3d": [
+          0.3042,
+          0.1584,
+          0.7297,
+          0.0983,
+          0.1097,
+          0.0958,
+          -0.3322,
+          0.5053,
+          3.0399
+        ],
+        "label": "bucket_noodle--Body"
+      }
+    ],
+    "description": "Return an array containing all detected object parts each with 'bbox_3d' (cx, cy, cz, sx, sy, sz and optional rotation fields) and an optional 'label' that may include part suffixes (e.g., 'object--Part')."
+  },
+  "3d_bbox_qa_single_part_with_desc": {
+    "value_example": [
+      {
+        "bbox_3d": [
+          0.3139,
+          0.0993,
+          0.7167,
+          0.0992,
+          0.0097,
+          0.0957,
+          -0.3322,
+          0.5053,
+          3.0399
+        ],
+        "label": "bucket_noodle--Lid"
+      }
+    ],
+    "description": "Return an array containing one object representing a single detected 3D part with 'bbox_3d' (center + size and optional rotation fields), an optional 'label', and optional 'description' for human-readable details."
+  },
+  "correspondence_pairs_customized_2d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored,_green_and_orange_plant",
+        "point_2d": [
+          657,
+          489
+        ],
+        "visible": false
+      },
+      {
+        "label": "b",
+        "description": "toy_plant_leaf_green",
+        "point_2d": [
+          700,
+          450
+        ],
+        "visible": true
+      }
+    ],
+    "description": "Return an array of correspondence pair objects each with 'label', 'description', 'point_2d' as [x,y], and boolean 'visible'."
+  },
+  "correspondence_pairs_single_object_2d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored,_green_and_orange_plant",
+        "point_2d": [
+          657,
+          489
+        ],
+        "visible": false
+      }
+    ],
+    "description": "Return an array containing one correspondence pair object for a single 2D object with fields 'label','description','point_2d', and 'visible'."
+  },
+  "correspondence_pairs_customized_3d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored_green_and_orange_plant",
+        "point_3d": [
+          0.34,
+          0.49,
+          0.85
+        ],
+        "visible": true
+      },
+      {
+        "label": "b",
+        "description": "toy_plant_leaf_green",
+        "point_3d": [
+          0.36,
+          0.45,
+          0.78
+        ],
+        "visible": true
+      }
+    ],
+    "description": "Return an array of correspondence pair objects each with 'label', 'description', 'point_3d' as [x,y,z in meters] (z within 1.0m), and boolean 'visible'."
+  },
+  "correspondence_pairs_single_object_3d": {
+    "value_example": [
+      {
+        "label": "a",
+        "description": "toy_plant_multi-colored_green_and_orange_plant",
+        "point_3d": [
+          0.34,
+          0.49,
+          0.85
+        ],
+        "visible": true
+      }
+    ],
+    "description": "Return an array containing one correspondence pair object for a single 3D object with fields 'label','description','point_3d' (z within 1.0m), and 'visible'."
+  },
+  "traj_qa_prediction_2d": {
+    "value_example": {
+      "2d_trajectory": [[783.6492,600.2256],[794.3301,566.9305],[795.4985,524.3031]]
+    },
+    "description": "Return an object containing '2d_trajectory' whose value is a list of 2D points [[x,y], ...]."
+  },
+  "traj_qa_prediction_3d": {
+    "value_example": {
+      "3d_trajectory": [[0.01,-0.2,-0.6],[0.02,-0.19,-0.59]]
+    },
+    "description": "Return an object containing '3d_trajectory' whose value is a list of 3D points [[x,y,z], ...]."
+  }
+}

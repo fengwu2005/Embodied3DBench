@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embodied3dbench-eval"
+version = "0.1.0"
+description = "Evaluation toolkit for Embodied3DBench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+    "numpy>=1.26",
+    "openai>=1.30",
+    "openpyxl>=3.1",
+    "pandas>=2.1",
+    "Pillow>=10",
+    "PyYAML>=6",
+    "requests>=2.31",
+    "scipy>=1.11",
+    "shapely>=2",
+    "tqdm>=4.66",
+    "cutoop",
+]
+
+[project.optional-dependencies]
+local = [
+    "torch>=2.6",
+    "transformers>=4.57",
+    "qwen-vl-utils",
+]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools]
+py-modules = ["base_api", "registry", "utils"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adapters*", "configs*", "constructors*", "metrics*"]

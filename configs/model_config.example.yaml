@@ -1,0 +1,18 @@
+openai-compatible:
+  model_name: "gpt-4o"
+  provider: "gpt4o"
+  base_url: "${OPENAI_BASE_URL}"
+  api_key: "${OPENAI_API_KEY}"
+  timeout: 60
+  max_tokens: 4096
+  supports_images: true
+  extra: {}
+
+qwen3-vl-local:
+  model_name: "qwen3-4b-local"
+  provider: "local-model"
+  timeout: 60
+  max_tokens: 4096
+  supports_images: true
+  extra:
+    model_path: "${QWEN3_VL_MODEL_PATH}"

@@ -1,0 +1,11 @@
+numpy>=1.26
+openai>=1.30
+openpyxl>=3.1
+pandas>=2.1
+Pillow>=10
+PyYAML>=6
+requests>=2.31
+scipy>=1.11
+shapely>=2
+tqdm>=4.66
+cutoop
